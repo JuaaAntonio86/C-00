@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:58:26 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/10 00:33:04 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/11 00:55:39 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ Contacts::~Contacts()
 	std::cout << "Contact destroyed" << std::endl;
 }
 
-Contacts*	Contacts::addContact()
+Contacts*	Contacts::addContact(int i)
 {
 	std::string message;
 
+	_index = i;
 	message = "Please insert new contact's first name:";
 	std::cout << message << std::endl;
 	_firstName = checkstr(message, 0);
@@ -40,7 +41,7 @@ Contacts*	Contacts::addContact()
 	message = "Please insert new contact's darkest secret:";
 	std::cout << message << std::endl;
 	_darkestSecret = checkstr(message, 0);;
-	std::cout << "Contact added: " << _firstName << " " << _lastName << " " << _nickName << " " << _phoneNumber << " " << _darkestSecret << std::endl;
+	std::cout << "Contact added: " << _firstName << " " << _lastName << std::endl;
 	return (this);
 }
 
@@ -48,11 +49,13 @@ std::string	Contacts::checkstr(std::string message, int i)
 {
 	std::string	input;
 
-	std::cin >> input;
+	std::getline(std::cin, input);
 	while (!checkinput(input, i))
 	{
+		//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
 		std::cout << message << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
+
 	}
 	return (input);
 }
@@ -63,6 +66,10 @@ bool		Contacts::checkinput(std::string input, int i)
 	int		j;
 
 	j = 0;
+	if (input.empty())
+	{
+		return (false);
+	}
 	if (i)
 	{
 		while (input[j])
@@ -92,7 +99,10 @@ bool		Contacts::checkinput(std::string input, int i)
 
 void	Contacts::printContact()
 {
+	std::string test[9];
+	test[8] = NULL;
 	if (this->_firstName == "")
 		return ;
-	std::cout << this->_firstName << " " << this->_lastName << std::endl;
+	test = _firstName;
+	std::cout << this->_index << " " << test << " " << this->_lastName << " " << this->_nickName << std::endl;
 }
