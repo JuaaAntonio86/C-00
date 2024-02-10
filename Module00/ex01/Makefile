@@ -6,15 +6,15 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 12:56:43 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/09 13:13:47 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/09 23:37:15 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-SRC = main.cpp PhoneBook.cpp \
+SRC = main.cpp PhoneBook.cpp Contacts.class.cpp \
 	
-INCLUDES = PhoneBook.hpp
+INCLUDES = PhoneBook.hpp Contacts.class.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 

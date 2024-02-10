@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:08:42 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/09 14:49:31 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/09 23:36:26 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,7 @@
 int	main()
 {
 	PhoneBook	phonebook;
-	std::string	P;
-
-	while (!phonebook.phoneloop(P))
-	{
-		std::cout << "Please insert a command: ADD, SEARCH or EXIT" << std::endl;
-		std::cin >> P;
-	}
+	phonebook.phoneloop(phonebook);
 	
-	phonebook.addContact();
 	return (0);
 }
