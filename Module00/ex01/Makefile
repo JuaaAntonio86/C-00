@@ -6,11 +6,11 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 12:56:43 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/09 23:37:15 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/11 23:36:02 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = JuansPhoneBook
 
 SRC = main.cpp PhoneBook.cpp Contacts.class.cpp \
 	

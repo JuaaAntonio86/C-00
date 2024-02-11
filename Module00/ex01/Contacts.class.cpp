@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:58:26 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/11 00:55:39 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:44:31 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Contacts*	Contacts::addContact(int i)
 {
 	std::string message;
 
-	_index = i;
+	index = i + 1;
 	message = "Please insert new contact's first name:";
 	std::cout << message << std::endl;
 	_firstName = checkstr(message, 0);
@@ -52,7 +52,6 @@ std::string	Contacts::checkstr(std::string message, int i)
 	std::getline(std::cin, input);
 	while (!checkinput(input, i))
 	{
-		//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
 		std::cout << message << std::endl;
 		std::getline(std::cin, input);
 
@@ -64,7 +63,7 @@ std::string	Contacts::checkstr(std::string message, int i)
 bool		Contacts::checkinput(std::string input, int i)
 {
 	int		j;
-
+	return (true);
 	j = 0;
 	if (input.empty())
 	{
@@ -99,10 +98,32 @@ bool		Contacts::checkinput(std::string input, int i)
 
 void	Contacts::printContact()
 {
-	std::string test[9];
-	test[8] = NULL;
-	if (this->_firstName == "")
-		return ;
-	test = _firstName;
-	std::cout << this->_index << " " << test << " " << this->_lastName << " " << this->_nickName << std::endl;
+	if (this->index > 0)
+	{
+	std::cout << "|    " << this->index << "     |";
+	printcolum(this->_firstName);
+	printcolum(this->_lastName);
+	printcolum(this->_nickName);
+	std::cout << std::endl;
+	}
+	return ;
+}
+
+void 		Contacts::printcolum(std::string str)
+{
+	int len;
+	int i = 0;
+
+	len = str.length();
+	if (len > 10)
+	{
+		while (i <= 8)
+		{
+			std::cout << str[i];
+			i++;
+		}
+		std::cout << ".|";
+	}
+	else
+		std::cout << str << std::setw(11 - len) << "|";
 }
