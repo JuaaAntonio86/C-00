@@ -5,25 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/09 11:41:36 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/12 21:49:15 by juan-anm         ###   ########.fr        #
+#    Created: 2024/02/09 12:56:43 by juan-anm          #+#    #+#              #
+#    Updated: 2024/02/12 22:03:18 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = GlobalBanksters
 
-SRC = megaphone.cpp
+SRC = tests.cpp Account.cpp \
+	
+INCLUDES = Account.hpp  \
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wextra -Werror -Wall -std=c++98 -g
+CXX = clang++ ##-Wextra -Werror -Wall -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
-
-%.o: %.cpp
+	
+%.o: %.cpp $(INCLUDES)
 	$(CXX) -c $< -o $@
 
 clean:

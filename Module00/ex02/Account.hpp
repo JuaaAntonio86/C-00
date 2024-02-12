@@ -12,6 +12,14 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+#include <iostream>
+
+#define BLUE "\033[1;34m"
+#define RESET "\033[0m"
+
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
