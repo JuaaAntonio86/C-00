@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:58:26 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/12 00:44:31 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:10:21 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contacts::Contacts()
 {
-	std::cout << "Contact created" << std::endl;
+	
 }
 Contacts::~Contacts()
 {
-	std::cout << "Contact destroyed" << std::endl;
+
 }
 
 Contacts*	Contacts::addContact(int i)
@@ -40,7 +40,7 @@ Contacts*	Contacts::addContact(int i)
 	_phoneNumber = checkstr(message, 1);
 	message = "Please insert new contact's darkest secret:";
 	std::cout << message << std::endl;
-	_darkestSecret = checkstr(message, 0);;
+	_darkestSecret = checkstr(message, 3);;
 	std::cout << "Contact added: " << _firstName << " " << _lastName << std::endl;
 	return (this);
 }
@@ -62,14 +62,13 @@ std::string	Contacts::checkstr(std::string message, int i)
 
 bool		Contacts::checkinput(std::string input, int i)
 {
-	int		j;
-	return (true);
-	j = 0;
+	int		j = 0;
+
 	if (input.empty())
 	{
 		return (false);
 	}
-	if (i)
+	if (i == 1)
 	{
 		while (input[j])
 		{
@@ -81,7 +80,7 @@ bool		Contacts::checkinput(std::string input, int i)
 			j++;
 		}
 	}
-	else
+	else if (!i)
 	{
 		while (input[j])
 		{
@@ -100,7 +99,7 @@ void	Contacts::printContact()
 {
 	if (this->index > 0)
 	{
-	std::cout << "|    " << this->index << "     |";
+	std::cout << "|         " << this->index << "|";
 	printcolum(this->_firstName);
 	printcolum(this->_lastName);
 	printcolum(this->_nickName);
@@ -115,7 +114,7 @@ void 		Contacts::printcolum(std::string str)
 	int i = 0;
 
 	len = str.length();
-	if (len > 10)
+	if (len >= 10)
 	{
 		while (i <= 8)
 		{
@@ -125,5 +124,5 @@ void 		Contacts::printcolum(std::string str)
 		std::cout << ".|";
 	}
 	else
-		std::cout << str << std::setw(11 - len) << "|";
+		std::cout  << std::setw(10) <<  str << "|";
 }

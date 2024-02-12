@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:08:42 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/10 23:31:13 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:21:19 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	main()
 {
 	PhoneBook	phonebook;
 	phonebook.phoneloop(phonebook);
-	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:48:10 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/12 00:04:20 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/12 16:37:39 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ public:
 				Contacts();
 				~Contacts();
 	int			index;
-	Contacts*	addContact(int i);
-	void 		printContact();
-	
-private:
 	std::string	_firstName;
 	std::string	_lastName;
 	std::string	_nickName;
 	std::string	_phoneNumber;
 	std::string	_darkestSecret;
+	Contacts*	addContact(int i);
+	void 		printContact();
+	
+private:
 	std::string	checkstr(std::string message, int i);
 	bool		checkinput(std::string input, int i);
 	void 		printcolum(std::string str);
