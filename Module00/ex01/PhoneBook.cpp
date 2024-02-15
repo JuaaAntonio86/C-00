@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
+/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:57:48 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/12 17:22:46 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:14:52 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 PhoneBook::PhoneBook()
 {
 	std::cout << "Juan's PhoneBook has been created" << std::endl;
+	static int	id = 0;
+
+	while(id < 8)
+	{
+		_contacts[id].index = 0;
+		id++;
+	}
 }
 
 PhoneBook::~PhoneBook()
@@ -26,12 +33,12 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::addContact()
 {
-		static int	i = 0;
+		static int	id = 0;
 
-		if (i > 8)
-			i = 0;
-		_contacts[i % 8].addContact(i % 8);
-		i++;
+		if (id > 8)
+			id = 0;
+		_contacts[id % 8].addContact(id % 8);
+		id++;
 }
 
 void	PhoneBook::searchContact()
@@ -51,7 +58,7 @@ void	PhoneBook::searchContact()
 	{
 		while ((1))
 		{
-			std::cout << "Please insert the index of the contact you want to expand or \"Q\" to returnex" << std::endl;
+			std::cout << "Please insert the index of the contact you want to expand or \"Q\" to return" << std::endl;
 			std::string input;
 			std::getline(std::cin, input);
 			if (std::cin.fail() || std::cin.bad()|| std::cin.eof())
@@ -63,7 +70,8 @@ void	PhoneBook::searchContact()
 				break;
 			else if (input.length() == 1 && input[0] >= '1' && input[0] <= '8' && _contacts[input[0] - '0' - 1].index != 0)
 			{
-				std::cout << "CONTACT INFO" << std::endl;
+				std::cout << "**********************************"<< std::endl;
+				std::cout << "         CONTACT INFO" << std::endl;
 				std::cout << "First Name    :";
 				std::cout << _contacts[input[0] - '0' - 1]._firstName << std::endl;
 				std::cout << "Last Name     :";
@@ -79,8 +87,6 @@ void	PhoneBook::searchContact()
 			}
 			else
 				std::cout << "Invalid index" << std::endl;
-
-
 		}
 	}
 	return ;
@@ -112,3 +118,5 @@ void	PhoneBook::phoneloop(PhoneBook &phonebook)
     }
 	return ;
 }
+
+int PhoneBook::i = 0;

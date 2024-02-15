@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
+#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 11:41:36 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/12 21:49:15 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/15 15:47:21 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wextra -Werror -Wall -std=c++98 -g
+CXX = c++ -Wextra -Werror -Wall -std=c++98 -g
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	$(CXX) $(OBJ) -o $(NAME)
 
 %.o: %.cpp

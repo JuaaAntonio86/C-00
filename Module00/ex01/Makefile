@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
+#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 12:56:43 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/11 23:36:02 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/15 15:50:58 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INCLUDES = PhoneBook.hpp Contacts.class.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wextra -Werror -Wall -std=c++98 -g
+CXX = c++ -Wextra -Werror -Wall -std=c++98 -g
 
 all: $(NAME)
 

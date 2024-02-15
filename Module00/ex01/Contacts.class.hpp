@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contacts.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
+/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:48:10 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/12 16:37:39 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:01:33 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
