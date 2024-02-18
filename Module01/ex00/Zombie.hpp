@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/18 23:06:42 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/02/18 23:22:41 by juan-anm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+
+# include <iostream>
+# include <string>
+
+class Zombie
+{
+private:
+	std::string _name;
+public:
+			Zombie(std::string name);
+			~Zombie();
+	void	announce(void);
+	Zombie*	newZombie(std::string name);
+	void	randomChump(std::string name);
+};
+
+# endif
