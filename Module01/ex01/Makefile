@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/18 23:17:59 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/19 18:06:27 by juan-anm         ###   ########.fr        #
+#    Created: 2024/02/19 18:01:57 by juan-anm          #+#    #+#              #
+#    Updated: 2024/02/19 19:09:38 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ZOMBIE
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
 INCLUDES = Zombie.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++ -Wextra -Wall -Werror -std=c++98 
+CC = c++ -Wextra -Wall -Werror -std=c++98 ##-fsanitize=address -g
 
 all: $(NAME)
 
