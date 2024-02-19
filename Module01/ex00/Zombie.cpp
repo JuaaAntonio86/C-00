@@ -6,15 +6,15 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 23:12:29 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/18 23:28:59 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:46:46 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : _name(name)
 {
-	this->_name = name;
+	std::cout << this->_name << " has been created" << std::endl;
 }
 
 Zombie::~Zombie()

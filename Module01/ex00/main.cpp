@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 23:16:17 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/18 23:33:48 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:46:48 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main(void)
 {
-	Zombie zombi("Juan");
+	Zombie zombi("Rick");
 	zombi.announce();
 	
-	Zombie *zombi2 = zombi.newZombie("Sheila");
+	Zombie *zombi2 = zombi.newZombie("Daryl");
 	zombi2->announce();
 	delete zombi2;
 	
-	zombi.randomChump("Paco");
+	Zombie::randomChump("Carl");
 	
 	return (0);
 }
