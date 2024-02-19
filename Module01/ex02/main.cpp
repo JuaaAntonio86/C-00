@@ -5,21 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 18:01:45 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/20 00:19:32 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/02/19 22:24:57 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/02/19 22:31:51 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+#include <iostream>
 
 int main(void)
 {
-	Zombie *zombies;
-	zombies = Zombie::zombieHorde(45, "Zombie");
-	for (int i = 0; i < 45; i++)
-	{
-		zombies[i].announce();
-	}
-	delete [] zombies;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *ptr = &str;
+	std::string &ref = str;
+
+	std::cout 
+	<< "The memory address of the string variable:	" << &str << std::endl
+	<< "The memory address held by stringPTR:		" << ptr << std::endl
+	<< "The memory address held by stringREF:		" << &ref << std::endl
+	<< "The value of the string variable:		" << str << std::endl
+	<< "The value pointed to by stringPTR:		" << *ptr << std::endl
+	<< "The value pointed to by stringREF:		" << ref << std::endl;
 	return (0);
 }
