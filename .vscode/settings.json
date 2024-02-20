@@ -55,5 +55,6 @@
 		"algorithm": "cpp",
 		"iomanip": "cpp",
 		"fstream": "cpp"
-	}
+	},
+	"github.copilot.editor.enableAutoCompletions": true
 }

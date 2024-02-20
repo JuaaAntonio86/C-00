@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:41:22 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/20 19:08:59 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/21 00:31:41 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,26 @@ void	Replace::replace_strings()
 {
 	std::ifstream		fl1(this->_file);
 	std::ofstream 		fl2(this->_file + std::string(".replace"));
-	std::string			buffer;
 	std::string			line;
-	std::vector<char>	whitespaces;
-	int					j;
-		
+	std::string			buffer;
+	size_t				pos;
+	int					i;
+
 	while (std::getline(fl1, line))
-	{
-		j = 0;
-		for(size_t i = 0; i < line.length(); i++)
+	{	
+		i = 0;
+		pos = 0;
+		while ((pos = line.find(this->_s1, pos)) != std::string::npos)
 		{
-			if (isspace(line[i]))
-				whitespaces.push_back(line[i]);
+			buffer += line.substr(i, pos - i) + this->_s2;
+			pos += this->_s1.length();
+			i = pos + 1;
+		
+			// line.erase(pos, this->_s1.length());
+			// line.insert(pos, this->_s2);
 		}
-		std::istringstream iss(line);
-		while(iss >> buffer)
-		{
-			if (buffer == this->_s1)
-				buffer = this->_s2;		
-			fl2 << buffer;
-			fl2 << whitespaces[j++];
-		}
-		whitespaces.clear();
-		fl2 << std::endl;
+
+			fl2 << buffer << std::endl;
 	}
 	fl1.close();
 	fl2.close();
