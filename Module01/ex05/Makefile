@@ -5,33 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/19 18:01:57 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/22 00:22:42 by juan-anm         ###   ########.fr        #
+#    Created: 2024/02/21 18:44:40 by juan-anm          #+#    #+#              #
+#    Updated: 2024/02/22 00:13:31 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ZOMBIE
+NAME = Harl
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Harl.cpp
 
-INCLUDES = Zombie.hpp
+INCLUDES = Harl.hpp
+
+CC = c++ -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++ -Wextra -Wall -Werror -std=c++98 ##-fsanitize=address -g
+all : $(NAME)
 
-all: $(NAME)
+$(NAME) : $(OBJS) $(INCLUDES)
+	$(CC) $(SRCS) -o $(NAME)
 
-$(NAME): $(OBJS) $(INCLUDES)
-	$(CC) $(OBJS) -o $(NAME)
-
-%.o: %.cpp Makefile
+%.o:%.cpp Makefile
 	$(CC) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
 
-fclean: clean	
+fclean : clean
 	rm -f $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 23:17:59 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/19 18:06:27 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/22 00:22:51 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS) $(INCLUDES)
 	$(CC) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Makefile
 	$(CC) -c $< -o $@
 
 clean:

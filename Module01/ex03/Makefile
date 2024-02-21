@@ -6,7 +6,7 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 22:39:44 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/20 18:08:43 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/22 00:21:18 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,11 @@ CC = -c++ -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile $(INCLUDES)
+$(NAME): $(OBJS) $(INCLUDES)
 	@$(CC) $(SRCS) -o $(NAME)
+
+%.o:%.cpp Makefile
+	@$(CC) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
