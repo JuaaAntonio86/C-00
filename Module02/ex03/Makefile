@@ -6,13 +6,13 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 18:00:05 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/28 18:18:47 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/02/28 23:19:28 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fixed
 
-SRCS = main.cpp Fixed.cpp Point.cpp bsq.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

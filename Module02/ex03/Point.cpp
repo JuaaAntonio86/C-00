@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:55:28 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/28 18:08:37 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/28 23:19:00 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ Point::~Point(void){}
 
 Point		&Point::operator=(Point const &rhs)
 {
+	if (this != &rhs)
+	{
+		(Fixed) this->_x = rhs.getX();
+		(Fixed) this->_y = rhs.getY();
+	}
 	return (*this);
 }
 

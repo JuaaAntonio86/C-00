@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:48:01 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/28 18:08:00 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/02/28 23:20:38 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ public:
 	Fixed		getY(void) const;
 };
 
-
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
