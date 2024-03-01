@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
+#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 18:00:05 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/25 23:57:49 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/01 16:39:25 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 INCLUDES = Fixed.hpp
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+CC = c++ -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
+#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 23:55:38 by juan-anm          #+#    #+#              #
-#    Updated: 2024/02/29 00:39:52 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/01 18:10:04 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS) $(INCLUDES)
 	$(CC) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Makefile
+%.o: %.cpp Makefile $(INCLUDES)
 	$(CC) -c $< -o $@
 
 clean:
