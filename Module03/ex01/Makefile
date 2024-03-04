@@ -6,11 +6,11 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 23:55:38 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/04 17:55:09 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/04 22:16:59 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 

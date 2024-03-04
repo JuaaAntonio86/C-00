@@ -6,13 +6,13 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 23:55:38 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/04 23:01:44 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/04 23:56:04 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 
@@ -20,9 +20,9 @@ DEPS = $(OBJS:%.o=%.d)
 
 DIR_OBJ = .obj/
 
-INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98 
+CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic ##-Wshadow ##-Wno-shadow
 
 all: $(DIR_OBJ) $(NAME)
 
