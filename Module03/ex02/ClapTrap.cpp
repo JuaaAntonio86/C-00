@@ -6,11 +6,13 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 23:55:50 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/29 00:52:09 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:03:53 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(){}
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0){
 	std::cout << "ClapTrap " << this->_name << " constructed" << std::endl;
@@ -26,7 +28,8 @@ ClapTrap::~ClapTrap(void){
 }
 
 ClapTrap&		ClapTrap::operator=(ClapTrap const &rhs){
-	//test self-assignment
+	if (this == &rhs) // Check for self-assignment
+        return *this;
 	this->_name = rhs._name;
 	this->_hitpoints = rhs._hitpoints;
 	this->_energyPoints = rhs._energyPoints;

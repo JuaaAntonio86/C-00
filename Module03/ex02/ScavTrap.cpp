@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:29:17 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/04 00:29:38 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:50:26 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,15 @@ void	ScavTrap::attack(std::string const &target)
 				", causing " <<	this->_attackDamage << " points of damage!" << 
 				std::endl;
 	this->_energyPoints -= 1;
+}
+
+ScavTrap&		ScavTrap::operator=(ScavTrap const &rhs){
+	if (this == &rhs)
+        return *this;
+	this->_name = rhs._name;
+	this->_hitpoints = rhs._hitpoints;
+	this->_energyPoints = rhs._energyPoints;
+	this->_attackDamage = rhs._attackDamage;
+	std::cout << "ScavTrap copy assignation operator called" << std::endl;
+	return (*this);
 }

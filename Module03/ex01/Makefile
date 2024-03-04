@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
+#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 23:55:38 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/01 18:09:57 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/04 17:55:09 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ OBJS = $(SRCS:.cpp=.o)
 
 DEPS = $(SRCS:.cpp=.d)
 
-INCLUDES = ClapTrap.hpp ScavTrap.cpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98
+CC =  c++ -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 23:55:44 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/04 00:25:10 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:35:32 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,33 @@ int main( void )
 	clap.attack("enemy");
 	clap.beRepaired(5);
 	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
+	clap.beRepaired(5);
 	clap.takeDamage(5);
-	clap.takeDamage(5);   
-    
-
-    return 0;
+	clap.takeDamage(5);
+	
+	return 0;
 }

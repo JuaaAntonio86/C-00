@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 19:04:22 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/04 00:38:59 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:48:42 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ class FragTrap : public ClapTrap
 {
 	private:
 				FragTrap();
-
 	public:
 				FragTrap(std::string name);
 				~FragTrap();
+	FragTrap&	operator=(FragTrap const &rhs);
 		void	highFivesGuys();
 };
-
-std::ostream& operator<<(std::ostream &out, FragTrap const &value);
 
 #endif

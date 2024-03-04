@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 23:55:47 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/29 00:50:34 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:01:19 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class ClapTrap{
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 };
-
-std::ostream& operator<<(std::ostream &out, ClapTrap const &value);
 
 #endif

@@ -6,20 +6,20 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 23:55:44 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/04 00:25:10 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:11:58 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
 
 int main( void )
 {
-    ScavTrap clap("Jhonny");
+    FragTrap clap("Jhonny");
 
 	clap.attack("enemy");
-	clap.guardGate();
 	clap.takeDamage(5);
 	clap.attack("enemy");
 	clap.attack("enemy");
@@ -27,6 +27,9 @@ int main( void )
 	clap.attack("enemy");
 	clap.attack("Wilfred");
 	clap.attack("enemy");
+	FragTrap clap2(clap);
+	clap2 = clap;
+	clap.highFivesGuys();
 	clap.beRepaired(5);
 	clap.beRepaired(5);
 	clap.takeDamage(5);

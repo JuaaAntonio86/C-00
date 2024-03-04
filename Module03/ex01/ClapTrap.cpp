@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 23:55:50 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/02/29 00:52:09 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:34:00 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ ClapTrap::~ClapTrap(void){
 }
 
 ClapTrap&		ClapTrap::operator=(ClapTrap const &rhs){
-	//test self-assignment
+	if (this == &rhs) // Check for self-assignment
+        return *this;
 	this->_name = rhs._name;
 	this->_hitpoints = rhs._hitpoints;
 	this->_energyPoints = rhs._energyPoints;
@@ -36,7 +37,7 @@ ClapTrap&		ClapTrap::operator=(ClapTrap const &rhs){
 }
 
 void			ClapTrap::attack(std::string const &target){
-	if (this->_energyPoints == 0)
+	if (this->_energyPoints < 1)
 	{
 		std::cout << "ClapTrap " << this->_name << " has no energy points" << std::endl;
 		return ;
@@ -71,7 +72,7 @@ void			ClapTrap::takeDamage(unsigned int amount){
 }
 
 void			ClapTrap::beRepaired(unsigned int amount){
-	if (this->_energyPoints == 0)
+	if (this->_energyPoints < 1)
 	{
 		std::cout << "ClapTrap " << this->_name << " has no energy points" << std::endl;
 		return ;
