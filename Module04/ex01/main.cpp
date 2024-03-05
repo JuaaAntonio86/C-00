@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:30:40 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/05 18:44:09 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/06 00:40:51 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,30 @@
 #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 int main()
 {
 
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	Cat lo;
-	Cat li;
-	lo = li;
-	std::cout << j->getType() << " Class is printed " << std::endl;
-	std::cout << i->getType() << " Class is printed " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-	
-	std::cout << std::endl << std::endl;
-	
-	const WrongAnimal* mt = new WrongAnimal();
-	const WrongAnimal* x = new WrongCat();
-	const WrongCat* sh =  new WrongCat();
-	std::cout << x->getType() << " Class is printed " << std::endl;
-	x->makeSound(); //will output the Animal sound!
-	mt->makeSound();
-	sh->makeSound();
-	delete mt;
-	delete x;
-	delete sh;
-	
+	Animal *Farm[8];
+	int i = 0;
+
+	while (i < 4)
+		Farm[i++] = new Cat();
+	while (i < 8)
+		Farm[i++] = new Dog();
+	for (i = 0; i < 8; i++)
+	{
+		Farm[i]->makeSound();
+		std::cout << " Hello I'm a " << Farm[i]->getType() << std::endl;
+	}
+	for(i = 7; i >= 0; i--)
+		delete Farm[i];
+
+	Animal *A = new Cat();
+	Animal *B = A;
+	B->makeSound();
+	delete A;
+
 	return 0;
 }

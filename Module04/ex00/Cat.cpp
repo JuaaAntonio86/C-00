@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 17:36:56 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:29:32 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/05 17:36:54 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/05 18:43:05 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-Dog::Dog() : Animal("Dog"){
+Cat::Cat() : Animal("Cat"){
 	std::cout
-			<< "<Dog Class> has been constructed" << std::endl;
-	this->_brain = new Brain();
+			<< "<Cat Class> has been constructed" << std::endl;
 }
 
-Dog::Dog(Dog const &other){
+Cat::Cat(Cat const &other){
 	std::cout
-			<< "<Dog Class> copy constructor called" << std::endl;
+			<< "<Cat Class> copy constructor called" << std::endl;
 	*this = other;
 }
 
-Dog::~Dog(){
+Cat::~Cat(){
 	std::cout
-			<< "<Dog Class> has been destroyed" << std::endl;
-	delete this->_brain;
+			<< "<Cat Class> has been destroyed" << std::endl;
 }
 
-Dog& Dog::operator=(Dog const &other){
+Cat& Cat::operator=(Cat const &other){
 	std::cout
-		<< "<Dog Class> Copy assignment operator called" << std::endl;
+		<< "<Cat Class> Copy assignment operator called" << std::endl;
 	if (this != &other)
-	{
 		this->_type = other._type;
-		*(this->_brain) = *(other._brain);
-	}
 	return (*this);
 }
 
-void	Dog::makeSound(void) const{
+void	Cat::makeSound(void) const{
 	std::cout
-			<< "<Dog Class> Woufff Woufff Grgrgrrrrrr" << std::endl;
+			<< "<Cat Class> Miaaauuuuu Mmmmiaaaauuuuu" << std::endl;
 }

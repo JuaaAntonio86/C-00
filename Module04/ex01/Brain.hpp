@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 17:35:29 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:09:37 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/05 23:28:15 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/06 00:11:17 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_H
+#define BRAIN_H
+
+#define IDEAS 100
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal{
+class Brain{
 	private:
-		Brain*		_brain;
-	protected:
-					Cat(std::string const &type);
+			std::string _ideas[IDEAS];
 	public:
-					Cat();
-					Cat(Cat const &other);
-					~Cat();
-	Cat&			operator=(Cat const &other);
-	void			makeSound(void) const;
+					Brain(void);
+					Brain(Brain const &other);
+					~Brain(void);
+			Brain&	operator=(Brain const &other);
 };
 
 #endif

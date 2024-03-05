@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:36:54 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:29:13 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/05 18:20:45 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
-Cat::Cat() : Animal("Cat"){
+WrongCat::WrongCat() : WrongAnimal("WrongCat"){
 	std::cout
-			<< "<Cat Class> has been constructed" << std::endl;
-	this->_brain = new Brain();
+			<< "<WrongCat Class> has been constructed" << std::endl;
 }
 
-Cat::Cat(Cat const &other){
+WrongCat::WrongCat(WrongCat const &other){
 	std::cout
-			<< "<Cat Class> copy constructor called" << std::endl;
+			<< "<WrongCat Class> copy constructor called" << std::endl;
 	*this = other;
 }
 
-Cat::~Cat(){
+WrongCat::~WrongCat(){
 	std::cout
-			<< "<Cat Class> has been destroyed" << std::endl;
-	delete this->_brain;
+			<< "<WrongCat Class> has been destroyed" << std::endl;
 }
 
-Cat& Cat::operator=(Cat const &other){
-	std::cout
-		<< "<Cat Class> Copy assignment operator called" << std::endl;
+WrongCat& WrongCat::operator=(WrongCat const &other){
 	if (this != &other)
-	{
 		this->_type = other._type;
-		*(this->_brain) = *(other._brain);
-	}
 	return (*this);
 }
 
-void	Cat::makeSound(void) const{
+void	WrongCat::makeSound(void) const{
 	std::cout
-			<< "<Cat Class> Miaaauuuuu Mmmmiaaaauuuuu" << std::endl;
+			<< "<WrongCat Class> Miaaauuuuu Mmmmiaaaauuuuu" << std::endl;
 }

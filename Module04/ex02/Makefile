@@ -6,13 +6,13 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/05 17:29:41 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/05 18:15:09 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/06 00:36:08 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animals
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 
@@ -20,9 +20,9 @@ DEPS = $(OBJS:%.o=%.d)
 
 DIR_OBJ = .obj/
 
-INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp
+INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic 
+CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic -g -fsanitize=address
 
 all: $(DIR_OBJ) $(NAME)
 
