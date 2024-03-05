@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 19:04:22 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/05 00:07:45 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/05 16:44:53 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/05 18:36:37 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "ClapTrap.hpp"
 #include <iostream>
 
-class ScavTrap : public virtual ClapTrap
-{
+class Animal{
 	protected:
-				ScavTrap();
-
+		std::string	_type;
+					Animal(std::string const &type);
 	public:
-				int i;
-				ScavTrap(std::string name);
-				~ScavTrap();
-	ScavTrap&	operator=(ScavTrap const &rhs);
-		void	attack(std::string const &target);
-		void	guardGate();
+					Animal();
+					Animal(Animal const &other);
+	virtual			~Animal();
+	Animal&			operator=(Animal const &other);
+	virtual void	makeSound(void) const;
+	std::string		getType(void) const;
 };
-
-std::ostream& operator<<(std::ostream &out, ScavTrap const &value);
 
 #endif

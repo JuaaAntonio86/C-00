@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/28 23:55:38 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/05 00:08:47 by juan-anm         ###   ########.fr        #
+#    Created: 2024/03/05 17:29:41 by juan-anm          #+#    #+#              #
+#    Updated: 2024/03/05 18:15:09 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = DiamondTrap
+NAME = Animals
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 
@@ -20,9 +20,9 @@ DEPS = $(OBJS:%.o=%.d)
 
 DIR_OBJ = .obj/
 
-INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic ##-Wshadow ##-Wno-shadow
+CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic 
 
 all: $(DIR_OBJ) $(NAME)
 

@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 19:04:22 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/05 00:07:45 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/05 17:35:29 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/05 18:21:17 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "ClapTrap.hpp"
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class ScavTrap : public virtual ClapTrap
-{
+class WrongCat : public WrongAnimal{
 	protected:
-				ScavTrap();
-
+					WrongCat(std::string const &type);
 	public:
-				int i;
-				ScavTrap(std::string name);
-				~ScavTrap();
-	ScavTrap&	operator=(ScavTrap const &rhs);
-		void	attack(std::string const &target);
-		void	guardGate();
+					WrongCat();
+					WrongCat(WrongCat const &other);
+					~WrongCat();
+	WrongCat&		operator=(WrongCat const &other);
+	void			makeSound(void) const;
 };
-
-std::ostream& operator<<(std::ostream &out, ScavTrap const &value);
 
 #endif
