@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
+/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:30:40 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:55:30 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/06 20:11:31 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Cat.hpp"
@@ -19,8 +19,8 @@
 
 int main()
 {
-
-	Animal *Farm[8];
+	AAnimal::makeSound;
+	AAnimal *Farm[8];
 	int i = 0;
 
 	while (i < 4)
@@ -35,8 +35,8 @@ int main()
 	for(i = 7; i >= 0; i--)
 		delete Farm[i];
 
-	Animal *A = new Cat();
-	Animal *B = A;
+	AAnimal *A = new Cat();
+	AAnimal *B = A;
 	B->makeSound();
 	delete A;
 	return 0;
