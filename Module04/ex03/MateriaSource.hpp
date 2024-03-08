@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:01:25 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/08 19:16:43 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:58:27 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Interfaces.hpp"
 
-class MateriaSource : public AMateria, public IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
 		int			_Nmateria;
