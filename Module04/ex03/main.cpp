@@ -5,39 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 17:30:40 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:55:30 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/07 22:57:36 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/08 17:40:10 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "Interfaces.hpp"
 
 int main()
 {
-
-	Animal *Farm[8];
-	int i = 0;
-
-	while (i < 4)
-		Farm[i++] = new Cat();
-	while (i < 8)
-		Farm[i++] = new Dog();
-	for (i = 0; i < 8; i++)
-	{
-		Farm[i]->makeSound();
-		std::cout << " Hello I'm a " << Farm[i]->getType() << std::endl;
-	}
-	for(i = 7; i >= 0; i--)
-		delete Farm[i];
-
-	Animal *A = new Cat();
-	Animal *B = A;
-	B->makeSound();
-	delete A;
+	IMateriaSource* src = new MateriaSource();
+	
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
+	ICharacter* bob = new Character("bob");
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
+	
 	return 0;
 }

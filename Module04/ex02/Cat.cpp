@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:36:54 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 20:10:26 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/06 00:29:13 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-Cat::Cat() : AAnimal("Cat"){
+Cat::Cat() : Animal("Cat"){
 	std::cout
 			<< "<Cat Class> has been constructed" << std::endl;
 	this->_brain = new Brain();

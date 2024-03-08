@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:36:16 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 20:04:00 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/05 23:56:20 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #define DOG_HPP
 
 #include <iostream>
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public AAnimal{
+class Dog : public Animal{
 	private:
 		Brain*		_brain;
 	protected:

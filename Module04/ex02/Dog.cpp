@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:36:56 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 20:08:37 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/06 00:29:32 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() : AAnimal("Dog"){
+Dog::Dog() : Animal("Dog"){
 	std::cout
 			<< "<Dog Class> has been constructed" << std::endl;
 	this->_brain = new Brain();

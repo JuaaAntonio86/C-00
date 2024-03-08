@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 17:35:29 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:09:37 by juan-anm         ###   ########.fr       */
+/*   Created: 2024/03/07 22:58:20 by juan-anm          #+#    #+#             */
+/*   Updated: 2024/03/08 19:16:59 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "Interfaces.hpp"
 
-class Cat : public Animal{
+class	Cure : public AMateria
+{
 	private:
-		Brain*		_brain;
-	protected:
-					Cat(std::string const &type);
+			std::string	_type;
+	
 	public:
-					Cat();
-					Cat(Cat const &other);
-					~Cat();
-	Cat&			operator=(Cat const &other);
-	void			makeSound(void) const;
+			Cure(void);
+			Cure(Cure &other);
+			~Cure(void);
+	Cure&	operator=(Cure &other);
+	Cure*	clone(void);
+
 };
 
 #endif
