@@ -6,14 +6,16 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:23:50 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/10 00:56:45 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/11 00:42:00 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Interfaces.hpp"
 
 Character::Character(std::string const &name) : _name(name), _count(0){
-	std::cout << "Constructor called" << std::endl;
+	// std::cout 
+	// 	<< "Character: " << this->_name << 
+	// 	" constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 	for (int i = 0; i < 100; i++)
@@ -21,20 +23,24 @@ Character::Character(std::string const &name) : _name(name), _count(0){
 }
 
 Character::Character(Character const &other){
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Character copy constructor called" << std::endl;
 	*this = other;
 }
 
 Character::~Character(void){
-	std::cout << "Destructor called" << std::endl;
-	// for (int i = 0; i < 100; i++)
-	// 	if (this->_unequiped[i])
-	// 		delete this->_unequiped[i];
+	// std::cout 
+	// 	<< "Character: " << this->_name << " destructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		if (this->_unequiped[i])
+		{
+			delete this->_unequiped[i];
+			this->_unequiped[i] = NULL;
+		}
 }
 
 Character& Character::operator=(Character const &other)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Character Assignation operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -53,9 +59,17 @@ std::string const & Character::getName() const{
 	return (this->_name);
 }
 
-void 				Character::equip(AMateria* m){
+void	Character::equip(AMateria* m){
 	int i = 0;
 
+	for (int i = 0; i < 100; i++)
+		if (this->_unequiped[i] == m)
+		{
+			std::cout 
+				<< "Characters: " << this->getName() <<
+				" materia was already equiped" << std::endl;
+			return ;
+		}	
 	while(this->_unequiped[i] && i < 100)
 		i++;
 	this->_unequiped[i] = m;
@@ -68,18 +82,24 @@ void 				Character::equip(AMateria* m){
 		this->_count++;
 	}
 	else
-		std::cout << "Inventory is full" << std::endl;
+		std::cout 
+			<< "Characters: " << this->getName() <<
+			"Inventory is full" << std::endl;
 }
 
 void 				Character::unequip(int idx){
-	if (idx >= 0 && idx < this->_count)
+	if (idx >= 0 && idx < 4)
 	{
-		this->_inventory[idx] = NULL;
-		this->_count--;
+		if (this->_inventory[idx])
+		{
+			this->_inventory[idx] = NULL;
+			this->_count--;
+		}
 	}
 }
 
 void	Character::use(int idx, ICharacter& target){
-	if (idx >= 0 && idx < this->_count)
-		this->_inventory[idx]->use(target);
+	if (idx >= 0 && idx <= this->_count && idx < 4)
+		if (this->_inventory[idx])
+			this->_inventory[idx]->use(target);
 }

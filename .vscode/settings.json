@@ -67,7 +67,8 @@
 		"memory": "cpp",
 		"stack": "cpp",
 		"type_traits": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"execution": "cpp"
 	},
 	"github.copilot.editor.enableAutoCompletions": true
 }
