@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 19:17:15 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/09 00:07:55 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:51:03 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ AMateria*	MateriaSource::createMateria(std::string const & type){
 			return (this->_arr[i]->clone());
 	return (NULL);
 }
-

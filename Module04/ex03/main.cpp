@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 22:57:36 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/08 17:40:10 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/10 01:25:39 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 	
-	delete bob;
-	delete me;
-	delete src;
+	// delete bob;
+	// delete me;
+	// delete src;
 	
 	return 0;
 }

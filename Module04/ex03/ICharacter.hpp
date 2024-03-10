@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 23:07:28 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/08 17:36:22 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:50:31 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ICHARACTER_HPP
 
 #include "Interfaces.hpp"
+
+class AMateria;
 
 class ICharacter
 {

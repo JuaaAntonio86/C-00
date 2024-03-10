@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 22:51:33 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/09 00:28:17 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:49:50 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AMATERIA_HPP
 
 #include "Interfaces.hpp"
+
+class ICharacter;
 
 class AMateria
 {
