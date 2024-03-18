@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:23:50 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/11 00:42:00 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:47:15 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,12 @@ void	Character::equip(AMateria* m){
 		this->_count++;
 	}
 	else
+	{
 		std::cout 
-			<< "Characters: " << this->getName() <<
-			"Inventory is full" << std::endl;
+		<< "Characters: " << this->getName() <<
+		"Inventory is full" << std::endl;
+		delete m;
+	}
 }
 
 void 				Character::unequip(int idx){

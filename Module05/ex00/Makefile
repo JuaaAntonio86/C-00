@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 22:57:40 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/11 14:47:44 by juan-anm         ###   ########.fr        #
+#    Created: 2024/03/18 18:41:43 by juan-anm          #+#    #+#              #
+#    Updated: 2024/03/18 18:49:40 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Interfaces
+NAME = Bureaucrat
 
-SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 
@@ -20,9 +20,11 @@ DEPS = $(OBJS:%.o=%.d)
 
 DIR_OBJ = .obj/
 
-INCLUDES = Interfaces.hpp
+INCLUDES = Bureaucrat.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic -g ##-fsanitize=address
+CC = c++
+
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
 all: $(DIR_OBJ) $(NAME)
 
@@ -30,10 +32,10 @@ $(DIR_OBJ)	:
 	mkdir -p $@
 
 $(NAME): $(OBJS) $(INCLUDES)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 $(DIR_OBJ)%.o: %.cpp Makefile $(INCLUDES)
-	$(CC) -MMD -c $< -o $@
+	$(CC) $(FLAGS) -MMD -c $< -o $@
 
 clean:
 	rm -rf $(DIR_OBJ)

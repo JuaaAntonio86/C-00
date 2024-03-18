@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 19:17:15 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/11 00:38:17 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:46:11 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ void	MateriaSource::learnMateria(AMateria* other){
 		_Nmateria++;
 	}
 	else
+	{
 		std::cout << "MateriaSource is full" << std::endl;
+		delete other;
+	}
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type){
