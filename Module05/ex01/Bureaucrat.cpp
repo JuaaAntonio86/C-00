@@ -6,12 +6,14 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:43:38 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/19 23:23:06 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:20:44 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"Bureaucrat.hpp"
 #include	<iostream>
+
+Bureaucrat::Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade){
 	if (grade < MAX_GRADE)
@@ -54,11 +56,28 @@ void		Bureaucrat::decrementGrade(){
 	else 
 		_grade += 1;
 }
+
+void		Bureaucrat::signForm(Form &ref){
+	try{
+		ref.beSigned(*this);
+		std::cout 
+			<< this->getName() << " signed "
+			<< ref.getName() << std::endl;
+	}
+	catch(Form::GradeTooLowException &e){
+		std::cout 
+			<< this->getName() << " couldn't sign " 
+			<< ref.getName() << " because "
+			<< e.what() << "." << std::endl;
+	}
+}
 	/* **********************Exception Classes************************** */
 
-const char* Bureaucrat::GradeTooHighException::what() const throw(){ return "Exception out of range: Grade too high";}
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{ return "Exception out of range: Grade too high";}
 
-const char* Bureaucrat::GradeTooLowException::what() const throw(){ return "Exception out of range: Grade too low";}
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{ return "Exception out of range: Grade too low";}
 
 
 	/* **********************ostream overload operator*********************** */
