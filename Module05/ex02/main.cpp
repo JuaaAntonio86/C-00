@@ -6,55 +6,66 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:33:24 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/25 17:27:11 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:34:18 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
 	try {
-		Bureaucrat bureaucrat("Juan Antonio", 150);
-		Bureaucrat test("pingu", 11);
-		AForm	papele("PAPER", 140, 140);
+		Bureaucrat bureaucrat("Juan Antonio", 3);
+		Bureaucrat test("pingu", 148);
+		Bureaucrat Med("medio", 99);
+		ShrubberyCreationForm	papele("PAPER");
+		RobotomyRequestForm		roboto("ROBOTOMIA");
+		PresidentialPardonForm 	presi("TERMINATOR");
 
-		test.signAForm(papele);
-		std::cout << std::endl << papele << std::endl;
 		std::cout << std::endl << bureaucrat << std::endl;
+		std::cout << std::endl << Med << std::endl;
+		std::cout << std::endl << test << std::endl;
+		
+		std::cout << std::endl;
+		
+		bureaucrat.signAForm(papele);
+		bureaucrat.executeForm(papele);
+		bureaucrat.signAForm(roboto);
+		bureaucrat.executeForm(roboto);
+		bureaucrat.executeForm(roboto);
+		bureaucrat.executeForm(roboto);
+		bureaucrat.executeForm(roboto);
+		bureaucrat.signAForm(presi);
+		bureaucrat.executeForm(presi);
+		
+		std::cout << std::endl;
 
+		Med.signAForm(papele);
+		Med.executeForm(papele);
+		Med.signAForm(roboto);
+		Med.executeForm(roboto);
+		Med.signAForm(presi);
+		Med.executeForm(presi);
+		
+		std::cout << std::endl;
+		
+		test.signAForm(papele);
+		test.executeForm(papele);
+		test.signAForm(roboto);
+		test.executeForm(roboto);
+		test.signAForm(presi);
+		test.executeForm(presi);
 
+		std::cout << std::endl;
+		std::cout << std::endl << papele << std::endl;
+		std::cout << std::endl << roboto << std::endl;
+		std::cout << std::endl << presi << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
-	}
-		try
-	{
-		Bureaucrat	Juan("Juan Antonio", 140);
-		Bureaucrat	boss("Boss", 1);
-		AForm		basicAForm("Basic stuff", 140, 150);
-		AForm		basicAForm2(basicAForm);
-		AForm		advancedAForm("Advanced stuff", 10, 1);
-		
-		std::cout << Juan << std::endl;
-		std::cout << boss << std::endl;
-		std::cout << basicAForm << std::endl;
-		std::cout << basicAForm2 << std::endl;
-		std::cout << advancedAForm << std::endl << std::endl;
-		
-		Juan.signAForm(basicAForm);
-		boss.signAForm(basicAForm2);
-		Juan.signAForm(advancedAForm);
-
-		boss.signAForm(advancedAForm);
-		std::cout << std::endl
-					<< basicAForm << std::endl;
-		std::cout << basicAForm2 << std::endl;
-		std::cout << advancedAForm << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	return EXIT_SUCCESS;
 }

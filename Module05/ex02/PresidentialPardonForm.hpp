@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
 #include <iostream>
-#include <fstream>
-#include <string>
+#include <cstdlib>
+#include <ctime>
 
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 	private:
 		std::string _target;
-		ShrubberyCreationForm();
+		PresidentialPardonForm();
 
 	public:
-		ShrubberyCreationForm(std::string const &target);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm(ShrubberyCreationForm const &other);
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const &other);
+		PresidentialPardonForm(std::string const &target);
+		~PresidentialPardonForm();
+		PresidentialPardonForm(PresidentialPardonForm const &other);
+		PresidentialPardonForm & operator=(PresidentialPardonForm const &other);
 		
 		std::string const & getTarget() const;
 		void	execute(Bureaucrat const & executor) const;

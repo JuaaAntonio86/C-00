@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:31:04 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/25 19:14:29 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:18:17 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,28 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		outfile.open(filename);
 		if (outfile.fail() == true)
 			std::cerr << "Error opening file." << std::endl;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 3; i++)
 		{
-			outfile <<
-			"         v" << std::endl <<
-			"        >X<" << std::endl <<
-			"         A" << std::endl <<
-			"        d$b" << std::endl <<
-			"      .d\\$$b." << std::endl <<
-			"    .d$i$$\\$$b." << std::endl <<
-			"       d$$@b" << std::endl <<
-			"      d\\$$$ib" << std::endl <<
-			"    .d$$$\\$$$b" << std::endl <<
-			"  .d$$@$$$$\\$$ib." << std::endl <<
-			"      d$$i$$b" << std::endl <<
-			"     d\\$$$$@$b" << std::endl <<
-			"  .d$@$$\\$$$$$@b." << std::endl <<
-			".d$$$$i$$$\\$$$$$$b." << std::endl <<
-			"        ###" << std::endl <<
-			"        ###" << std::endl <<
-			"        ###" << std::endl <<
+		outfile <<
+			"               v                    v                        v                       v                  v" << std::endl <<
+			"              >X<                  >X<                      >X<                     >X<              >X<" << std::endl <<
+			"               A                    A                        A                       A                 A" << std::endl <<
+			"              d$b                  d$b                      d$b                     d$b               d$b" << std::endl <<
+			"            .d\\$$b.              .d\\$$b.                .d\\$$b.                 .d\\$$b.           .d\\$$b." << std::endl <<
+			"          .d$i$$\\$$b.          .d$i$$\\$$b.            .d$i$$\\$$b.             .d$i$$\\$$b.        .d$i$$\\$$b." << std::endl <<
+			"             d$$@b                d$$@b                    d$$@b                    d$$@b               d$$@b" << std::endl <<
+			"            d\\$$$ib              d\\$$$ib                 d\\$$$ib                d\\$$$ib            d\\$$$ib" << std::endl <<
+			"          .d$$$\\$$$b.          .d$$$\\$$$b.             .d$$$\\$$$b.             .d$$$\\$$$b.       .d$$$\\$$$b." << std::endl <<
+			"        .d$$@$$$$\\$$ib.      .d$$@$$$$\\$$ib.         .d$$@$$$$\\$$ib.         .d$$@$$$$\\$$ib.   .d$$@$$$$\\$$ib." << std::endl <<
+			"            d$$i$$b                d$$i$$b                  d$$i$$b                 d$$i$$b            d$$i$$b" << std::endl <<
+			"           d\\$$$$@$b              d\\$$$$@$b              d\\$$$$@$b              d\\$$$$@$b         d\\$$$$@$b" << std::endl <<
+			"        .d$@$$\\$$$$$@b.        .d$@$$\\$$$$$@b.        .d$@$$\\$$$$$@b.        .d$@$$\\$$$$$@b.    .d$@$$\\$$$$$@b." << std::endl <<
+			"    .d$$$$i$$$\\$$$$$$@$$$$$$\\$$$$$$@$$$$$$@$$$$$$\\$$$$$$@$$$$$$\\$$$$$$@$$$$$$\\$$$$$$@$$$$$$\\$$$$$$@$$$$$$\\$$$$$$i$$b." << std::endl <<
+			"                ###                    ###                    ###                    ###                    ###" << std::endl <<
+			"                ###                    ###                    ###                    ###                    ###" << std::endl <<
+			"                ###                    ###                    ###                    ###                    ###" << std::endl <<
 		std::endl;
 		}
-		outfile.close();
+	outfile.close();
 	}
 }

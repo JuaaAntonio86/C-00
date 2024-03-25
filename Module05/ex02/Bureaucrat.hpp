@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:16:16 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/25 17:27:15 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:25:01 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Bureaucrat{
 				void		incrementGrade();
 				void		decrementGrade();
 				void		signAForm(AForm &ref);
+				void		executeForm(AForm const &ref);
 
 	/* **********************Exception Classes************************** */
 	
