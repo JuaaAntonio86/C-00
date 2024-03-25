@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:33:24 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/25 17:05:16 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:27:11 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
 	try {
 		Bureaucrat bureaucrat("Juan Antonio", 150);
 		Bureaucrat test("pingu", 11);
-		Form	papele("PAPER", 140, 140);
+		AForm	papele("PAPER", 140, 140);
 
-		test.signForm(papele);
+		test.signAForm(papele);
 		std::cout << std::endl << papele << std::endl;
 		std::cout << std::endl << bureaucrat << std::endl;
 
@@ -32,25 +32,25 @@ int main(void)
 	{
 		Bureaucrat	Juan("Juan Antonio", 140);
 		Bureaucrat	boss("Boss", 1);
-		Form		basicForm("Basic stuff", 140, 150);
-		Form		basicForm2(basicForm);
-		Form		advancedForm("Advanced stuff", 10, 1);
+		AForm		basicAForm("Basic stuff", 140, 150);
+		AForm		basicAForm2(basicAForm);
+		AForm		advancedAForm("Advanced stuff", 10, 1);
 		
 		std::cout << Juan << std::endl;
 		std::cout << boss << std::endl;
-		std::cout << basicForm << std::endl;
-		std::cout << basicForm2 << std::endl;
-		std::cout << advancedForm << std::endl << std::endl;
+		std::cout << basicAForm << std::endl;
+		std::cout << basicAForm2 << std::endl;
+		std::cout << advancedAForm << std::endl << std::endl;
 		
-		Juan.signForm(basicForm);
-		boss.signForm(basicForm2);
-		Juan.signForm(advancedForm);
+		Juan.signAForm(basicAForm);
+		boss.signAForm(basicAForm2);
+		Juan.signAForm(advancedAForm);
 
-		boss.signForm(advancedForm);
+		boss.signAForm(advancedAForm);
 		std::cout << std::endl
-					<< basicForm << std::endl;
-		std::cout << basicForm2 << std::endl;
-		std::cout << advancedForm << std::endl;
+					<< basicAForm << std::endl;
+		std::cout << basicAForm2 << std::endl;
+		std::cout << advancedAForm << std::endl;
 	}
 	catch (std::exception & e)
 	{

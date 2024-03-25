@@ -6,13 +6,13 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 18:41:43 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/25 17:05:16 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/25 19:10:50 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 
@@ -20,7 +20,7 @@ DEPS = $(OBJS:%.o=%.d)
 
 DIR_OBJ = .obj/
 
-INCLUDES = Bureaucrat.hpp Form.hpp
+INCLUDES = Bureaucrat.hpp AForm.hpp  ShrubberyCreationForm.hpp
 
 CC = c++
 
