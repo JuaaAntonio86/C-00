@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:31:04 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/26 16:31:36 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:24:40 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string const & ShrubberyCreationForm::getTarget() const{return (this->_targ
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if(executor.getGrade() > this->getGradeExecute())
-		throw (Bureaucrat::GradeTooHighException());
+		throw (Bureaucrat::GradeTooLowException());
 	else if (this->getSigned() == false)
 		throw (AForm::NotSignedException());
 	else

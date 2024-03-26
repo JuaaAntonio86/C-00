@@ -33,7 +33,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	static int i = 0;
 
 	if(executor.getGrade() > this->getGradeExecute())
-		throw (Bureaucrat::GradeTooHighException());
+		throw (Bureaucrat::GradeTooLowException());
 	else if (this->getSigned() == false)
 		throw (AForm::NotSignedException());
 	else
