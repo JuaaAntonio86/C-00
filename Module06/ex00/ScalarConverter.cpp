@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 00:02:15 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/02 18:50:05 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:05:58 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,11 @@ void toInt(std::string s)
 		if (s.size() == 1)
 			i = static_cast<int>(s[0]);
 		else 
-			i = static_cast<int>(std::stoi(s));
-		std::cout << "int: " << i << std::endl;
+			i = static_cast<int>(std::atoi(s.c_str()));
+		if (i < std::numeric_limits<int>::min() || i > std::numeric_limits<int>::max())
+			std::cout << "int: impossible\n";
+		else
+			std::cout << "int: " << i << std::endl;
 	}
 	else
 		std::cout << "int: impossible\n";
@@ -64,10 +67,15 @@ void toFloat(std::string s)
 			f = static_cast<double>(s[0]);
 		else
 			f = (std::atof(s.c_str()));
-		if (f - static_cast<int>(f) == 0)
-			std::cout << "float: " <<  std::fixed << static_cast<int>(f) << ".0f" << std::endl;
+		if (f < std::numeric_limits<float>::min() || f > std::numeric_limits<float>::max())
+			std::cout << "float: impossible\n";
 		else
-			std::cout << "float: " <<  std::fixed << f << "f" << std::endl;
+		{
+			if (f - static_cast<int>(f) == 0)
+				std::cout << "float: " <<  std::fixed << static_cast<int>(f) << ".0f" << std::endl;
+			else
+				std::cout << "float: " <<  std::fixed << f << "f" << std::endl;
+		}
 	}
 	else
 		std::cout << "float:  impossible\n";
@@ -84,10 +92,15 @@ void toDouble(std::string s)
 			d = static_cast<double>(s[0]);
 		else
 			d = (std::atof(s.c_str()));
-		if (d - static_cast<int>(d) == 0)
-			std::cout << "double: " <<  std::fixed << static_cast<int>(d) << ".0" << std::endl;
+			if (d < std::numeric_limits<double>::min() || d > std::numeric_limits<double>::max())
+			std::cout << "double: impossible\n";
 		else
-			std::cout << "double: " << std::fixed << d << std::endl;
+		{
+			if (d - static_cast<int>(d) == 0)
+				std::cout << "double: " <<  std::fixed << static_cast<int>(d) << ".0" << std::endl;
+			else
+				std::cout << "double: " << std::fixed << d << std::endl;
+		}
 	}
 	else
 		std::cout << "double: impossible\n";
