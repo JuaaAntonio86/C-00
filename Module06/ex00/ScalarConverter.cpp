@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 00:02:15 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/02 19:05:58 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/02 23:11:57 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void toInt(std::string s)
 		std::cout << "int: impossible\n";
 }
 
-void toFloat(std::string s)
+void toFloat(std::string s, bool isInt)
 {
 	float f;
 	std::stringstream ss(s);
@@ -65,6 +65,8 @@ void toFloat(std::string s)
 	{
 		if (s.size() == 1)
 			f = static_cast<double>(s[0]);
+		else if (isInt)
+			f = static_cast<float>(std::atoi(s.c_str()));
 		else
 			f = (std::atof(s.c_str()));
 		if (f < std::numeric_limits<float>::min() || f > std::numeric_limits<float>::max())
@@ -81,7 +83,7 @@ void toFloat(std::string s)
 		std::cout << "float:  impossible\n";
 }
 
-void toDouble(std::string s)
+void toDouble(std::string s, bool isInt)
 {
 	double d;
 	std::stringstream ss(s);
@@ -90,6 +92,8 @@ void toDouble(std::string s)
 	{
 		if (s.size() == 1)
 			d = static_cast<double>(s[0]);
+		else if (isInt)
+			d = static_cast<double>(std::atoi(s.c_str()));
 		else
 			d = (std::atof(s.c_str()));
 			if (d < std::numeric_limits<double>::min() || d > std::numeric_limits<double>::max())
@@ -128,6 +132,8 @@ void handlePseudoLiterals(std::string s)
 void ScalarConverter::convert(std::string s)
 {
 	int i = 0;
+	bool isInt = true;
+
 	toChar(s);
 	toInt(s);
 	std::string pseudo[3] = {"-inff", "+inff", "nanf"};
@@ -141,10 +147,14 @@ void ScalarConverter::convert(std::string s)
 		i++;
 		if (i == 3)
 		{
-			if (s[s.size() - 1] == 'f')
-				s.erase(s.size() - 1);
-			toFloat(s);
-			toDouble(s);
+			if (s.find('.') != std::string::npos)
+			{
+				isInt = false;
+				if (s[s.size() - 1] == 'f')
+					s.erase(s.size() - 1);
+			}
+			toFloat(s, isInt);
+			toDouble(s, isInt);
 		}
 	}
 }

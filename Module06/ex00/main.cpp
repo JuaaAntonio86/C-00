@@ -55,6 +55,9 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	ScalarConverter::convert("");
 	std::cout << std::endl;
+	ScalarConverter::convert("2147483648");
+	std::cout << std::endl;
+	
 		}
 		catch(std::exception &e){
 			std::cout << e.what() << std::endl;
