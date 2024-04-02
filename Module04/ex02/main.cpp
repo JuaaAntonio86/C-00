@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
+/*   By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:30:40 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/03/06 00:55:30 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:11:56 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,15 @@ int main()
 	Animal *B = A;
 	B->makeSound();
 	delete A;
+
+	Dog		plat;
+	Dog mars = Dog(plat);
+
+	std::cout << plat.getType() << std::endl;
+	plat.makeSound();
+	std::cout << mars.getType() << std::endl;
+	mars.makeSound();
+	// delete mars;
+	
 	return 0;
 }

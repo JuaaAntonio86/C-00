@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -16,9 +16,8 @@ int main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
-	ScalarConverter::convert("a");
-	std::cout << std::endl;
-	ScalarConverter::convert("-0,5454f");
+		try{
+	ScalarConverter::convert("-0.5454f");
 	std::cout << std::endl;
 	ScalarConverter::convert("2144545");
 	std::cout << std::endl;
@@ -30,7 +29,7 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	ScalarConverter::convert("-312783217689239789");
 	std::cout << std::endl;
-	ScalarConverter::convert("3.14159265358979323846");
+	ScalarConverter::convert("8975238972438972398798527397580349870439834.f");
 	std::cout << std::endl;
 	ScalarConverter::convert("0.0000000000");
 	std::cout << std::endl;
@@ -56,6 +55,10 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	ScalarConverter::convert("");
 	std::cout << std::endl;
+		}
+		catch(std::exception &e){
+			std::cout << e.what() << std::endl;
+		}
 
 	}
 	else if (argc == 2)

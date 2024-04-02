@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
+#    By: juan-anm <juan-anm@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/05 17:29:41 by juan-anm          #+#    #+#              #
-#    Updated: 2024/03/06 00:36:08 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/03/15 19:10:40 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ DIR_OBJ = .obj/
 
 INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
 
-CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic -g -fsanitize=address
+CC =  c++ -Wall -Wextra -Werror -std=c++98 -pedantic -g ##-fsanitize=address
 
 all: $(DIR_OBJ) $(NAME)
 

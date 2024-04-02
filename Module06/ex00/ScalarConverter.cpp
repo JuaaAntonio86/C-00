@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 00:02:15 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/02 00:37:29 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:50:05 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ void toFloat(std::string s)
 {
 	float f;
 	std::stringstream ss(s);
-	if (ss >> f || s.size() == 1)
+	if (!s.empty() || s.size() == 1)
 	{
 		if (s.size() == 1)
-			f = static_cast<float>(s[0]);
+			f = static_cast<double>(s[0]);
 		else
-			f = static_cast<float>(std::stof(s));
+			f = (std::atof(s.c_str()));
 		if (f - static_cast<int>(f) == 0)
-			std::cout << "float: " << f << ".0f" << std::endl;
+			std::cout << "float: " <<  std::fixed << static_cast<int>(f) << ".0f" << std::endl;
 		else
-			std::cout << "float: " << f << "f" << std::endl;
+			std::cout << "float: " <<  std::fixed << f << "f" << std::endl;
 	}
 	else
 		std::cout << "float:  impossible\n";
@@ -78,16 +78,16 @@ void toDouble(std::string s)
 	double d;
 	std::stringstream ss(s);
 
-	if (ss >> d || s.size() == 1)
+	if (!s.empty() || s.size() == 1)
 	{
 		if (s.size() == 1)
 			d = static_cast<double>(s[0]);
 		else
-			d = static_cast<double>(std::stod(s));
+			d = (std::atof(s.c_str()));
 		if (d - static_cast<int>(d) == 0)
-			std::cout << "double: " << d << ".0" << std::endl;
+			std::cout << "double: " <<  std::fixed << static_cast<int>(d) << ".0" << std::endl;
 		else
-			std::cout << "double: " << d << std::endl;
+			std::cout << "double: " << std::fixed << d << std::endl;
 	}
 	else
 		std::cout << "double: impossible\n";
