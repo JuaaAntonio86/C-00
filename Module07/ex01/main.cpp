@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:32:46 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/03 19:47:42 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/03 23:32:34 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,21 @@ int main()
 	iter(float_array, 5, print);
 	std::cout << "Char array:" << std::endl;
 	iter(char_array, 5, print);
+	std::cout << "String array:" << std::endl;
+	iter(string_array, 5, print);
+
+	std::cout << "Int array after increment:" << std::endl;
+	iter(int_array, 5, increment);
+	iter(int_array, 5, print);
+	std::cout << "Float array after increment:" << std::endl;
+	iter(float_array, 5, increment);
+	iter(float_array, 5, print);
+	std::cout << "Char array after increment:" << std::endl;
+	iter(char_array, 5, increment);
+	iter(char_array, 5, print);
+	std::cout << "String array after increment:" << std::endl;
+	iter(string_array, 5, increment);
+	iter(string_array, 5, print);
+	
 	return (0);
 }
