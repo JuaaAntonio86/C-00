@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 23:45:16 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/04 00:23:01 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:38:05 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Array{
 		Array(const Array& other);
 		~Array();
 		Array& operator=(const Array& other);
-		T& operator[](const unsigned int index);
+		T& operator[](const unsigned int index) const;
 		unsigned int size() const;
 };
 

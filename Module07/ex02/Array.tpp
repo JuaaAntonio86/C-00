@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 23:45:21 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/04 00:20:44 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:38:04 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ Array<T>::Array(const unsigned int size)
 	_array = new T[size];
 	if (_array == NULL)
 		throw std::runtime_error("Memory allocation failed.");
-	for(unsigned int i = 0; i < size; i++)
-		_array[i] = 0;
 }
 
 template <typename T>
@@ -63,9 +61,13 @@ Array<T>& Array<T>::operator=(const Array &other)
 }
 
 template <typename T>
-T& Array<T>::operator[](const unsigned int index)
+T& Array<T>::operator[](const unsigned int index) const
 {
-	if (index >= _size)
+	if (this->_array == NULL)
+		throw std::out_of_range("Array is empty.");
+	if (this->_size == 0)
+		throw std::out_of_range("Array is empty.");
+	if (index >= _size || index < 0)
 		throw std::out_of_range("Index out of range.");
 	return _array[index];
 }
