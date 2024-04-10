@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 00:15:39 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/10 11:57:31 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:34:03 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include <algorithm>
 # include <iostream>
 # include <iterator>
-#include <deque>
-#include <map>
-#include <string>
-#include <strstream>
+# include <deque>
+# include <map>
+# include <string>
+# include <vector>
+# include <strstream>
+
 
 class Span{
 	private:
@@ -38,6 +40,5 @@ class Span{
 		long int			longestSpan();
 		void				printSpan();
 };
-
 
 #endif

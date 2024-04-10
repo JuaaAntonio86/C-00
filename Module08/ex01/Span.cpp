@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 00:15:19 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/10 12:06:38 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:35:19 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Span& Span::operator=(const Span& other){
 }
 
 Span::Span(int N): _Nsize(N) {
-	if (_Nsize <= 0) {
+	if (_Nsize <= 0 || _Nsize > INT_MAX) 
             throw std::invalid_argument("Invalid value, not allowed for Nsize");
 }
 
@@ -66,7 +66,7 @@ unsigned int	Span::shortestSpan(){
 	else{
 		std::vector<int> sorted = this->_Span;
 		std::sort(sorted.begin(), sorted.end());
-		int diff = INT_MAX;
+		long diff = LONG_MAX;
 		for(std::vector<int>::iterator it = sorted.begin() + 1; it != sorted.end(); it++)
 		{
 			if (diff > (*it - (*(it - 1))))
@@ -84,7 +84,7 @@ long int	Span::longestSpan(){
 	else{
 		std::vector<int> sorted = this->_Span;
 		std::sort(sorted.begin(), sorted.end());
-		return ((*(sorted.end() - 1)) - (*(sorted.begin())));
+		return static_cast<unsigned int> ((*(sorted.end() - 1)) - (*(sorted.begin())));
 	}
 }
 
