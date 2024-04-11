@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 00:15:19 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/10 17:35:19 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:18:23 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ unsigned int	Span::shortestSpan(){
 			if (diff > (*it - (*(it - 1))))
 				diff = (*it - (*(it - 1)));
 		}
-			std::cout << *(sorted.end() - 1) <<std::endl;
 		return static_cast<unsigned int> (diff);
 	}
 	
