@@ -6,7 +6,7 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 00:14:28 by juan-anm          #+#    #+#              #
-#    Updated: 2024/04/10 00:14:49 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/04/11 18:01:11 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,14 @@ fclean: clean
 
 re: fclean all
 
+git : fclean
+	@read -p "Enter commit message: " commit_message; \
+    git add .; \
+    git commit -m "$$commit_message"
+	git push
+
 -include $(DEPS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re git
 
 # **************************************************************************** #
