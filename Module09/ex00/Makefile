@@ -6,7 +6,7 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 23:31:44 by juan-anm          #+#    #+#              #
-#    Updated: 2024/04/12 23:32:42 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/04/16 00:30:06 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCLUDES = BitcoinExchange.hpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g ##-fsanitize=address
 
 all: $(DIR_OBJ) $(NAME)
 
