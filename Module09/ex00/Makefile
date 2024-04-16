@@ -6,13 +6,13 @@
 #    By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 23:31:44 by juan-anm          #+#    #+#              #
-#    Updated: 2024/04/16 00:30:06 by juan-anm         ###   ########.fr        #
+#    Updated: 2024/04/16 17:29:49 by juan-anm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp BitcoinExchange.cpp BitcoinExchangeUtils.cpp
 
 OBJS = $(SRCS:%.cpp=$(DIR_OBJ)%.o)
 

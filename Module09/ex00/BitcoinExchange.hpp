@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:31:39 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/16 01:02:44 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/16 18:47:50 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,23 @@
 #include <map>
 #include <fstream>
 #include <math.h>
+#include <stdbool.h>
 
-// typedef struct s_date{
-// 	std::string		db_line;
-// 	int				year;
-// 	int				month;
-// 	int				day;
-// 	bool			error;
-// } t_date;
+#define FALSE 0;
+#define TRUE 1;
+#define MAX_SVALUE int 1000;
+#define MIN_SVALUE int 0;
+
+
+
+typedef struct s_date{
+	double			value;
+	int				year;
+	int				month;
+	int				day;
+	bool			flag;	
+	std::string		error;
+	} t_date;
 
 
 class bitCoin{
@@ -31,15 +40,17 @@ class bitCoin{
 												bitCoin();
 												bitCoin(const bitCoin& other);
 		bitCoin& 								operator=(const bitCoin& other);
-		std::map<std::string, double>				_csv_map;
+		
+		std::map<std::string, t_date>			_csv_map;
 		std::ifstream 							_csv_db;
 		std::ifstream 							_value_db;
 		void									parse_csv();
-		void									check_csv() const;
-		const std::string& 						check_dates(const std::string& str) const;
+		std::pair<std::string, t_date>	 		check_dates(const std::string& str);
+		bool									isValidstr(const std::string& str) const;
 		bool									isLeapYear(int year) const;
 		int										checkForHyphen(const std::string& str) const;
-		bool									isNumeric(const std::string& str) const;
+		std::pair<std::string, t_date>&			check_values(const std::string& value, std::pair<std::string, t_date>&	tmp_pair);
+		
 	public:
 												~bitCoin();
 												bitCoin(const std::string& csv_file);
