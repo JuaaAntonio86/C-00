@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:31:39 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/16 18:47:50 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:11:45 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <fstream>
 #include <math.h>
 #include <stdbool.h>
+#include <string>
 
 #define FALSE 0;
 #define TRUE 1;
@@ -50,7 +51,7 @@ class bitCoin{
 		bool									isLeapYear(int year) const;
 		int										checkForHyphen(const std::string& str) const;
 		std::pair<std::string, t_date>&			check_values(const std::string& value, std::pair<std::string, t_date>&	tmp_pair);
-		
+		void									find_closest(std::pair<std::string, t_date>&	tmp_pair) const;
 	public:
 												~bitCoin();
 												bitCoin(const std::string& csv_file);
@@ -58,11 +59,3 @@ class bitCoin{
 		void									loadFiles(const std::string& argv);
 		void									printResult();
 };
-
-	//public:
-		//infile getters
-		//map csv database parser to map
-		//map value database parser to pair
-		//check dates(years, months and days are valid)
-		//...........etc...........
-

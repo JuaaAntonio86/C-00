@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:31:41 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/15 17:39:55 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:20:27 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
+		std::cout << std::fixed;
+		std::cout << std::setprecision(2);
 		try{
 				bitCoin broker("data.csv");
 
