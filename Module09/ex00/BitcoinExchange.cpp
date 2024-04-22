@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:31:36 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/18 23:14:59 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:16:03 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 bitCoin::bitCoin(const std::string& csv_file)
 {
 	_csv_db.open(csv_file, std::ifstream::in);
-	if (!_csv_db.is_open())
-		throw std::invalid_argument("Invalid file name: please crate a valid csv file in the root of this directory");
+	// if (!_csv_db.is_open())
+	// 	throw std::invalid_argument("Invalid file name: please crate a valid csv file in the root of this directory");
+	// if (_csv_db.peek() == std::ifstream::traits_type::eof())
+		// throw std::invalid_argument( "The csv database file is empty.");
 }
 
 bitCoin::~bitCoin()
@@ -28,9 +30,11 @@ bitCoin::~bitCoin()
 
 void	bitCoin::loadFiles(const std::string& argv){
 	_value_db.open(argv, std::ifstream::in);
-	if (!_value_db.is_open())
-		throw std::invalid_argument("Invalid file name: please pass as argument a valid \
-			.txt file which is in the root of this directory");
+	// if (!_value_db.is_open())
+	// 	throw std::invalid_argument("Invalid file name: please pass as argument a valid \
+	// 		.txt file which is in the root of this directory");
+	// if(_value_db.peek() == std::ifstream::traits_type::eof())
+	// 	throw std::invalid_argument( "Value file is empty.");
 }
 
 void bitCoin::parse_csv(){
@@ -50,7 +54,7 @@ void bitCoin::parse_csv(){
 		tmp_pair = check_values(line.c_str() + (pos + 1), tmp_pair);
 		_csv_map.insert(tmp_pair);
 	}
-
+	check_map();
 }
 
 std::pair<std::string, t_date>	bitCoin::check_dates(const std::string& str){
@@ -75,8 +79,7 @@ std::pair<std::string, t_date>	bitCoin::check_dates(const std::string& str){
 	tmp_pair.second.month = atoi(temp.c_str());
 	temp = str.substr(8, 2);
 	tmp_pair.second.day = atoi(temp.c_str());
-	if ((tmp_pair.second.year < 2009 || tmp_pair.second.year > 2024) || (tmp_pair.second.month < 1 
-	|| tmp_pair.second.month > 12) || (tmp_pair.second.day < 1 || tmp_pair.second.day > calendar[tmp_pair.second.month]))
+	if ((tmp_pair.second.month < 1 || tmp_pair.second.month > 12) || (tmp_pair.second.day < 1 || tmp_pair.second.day > calendar[tmp_pair.second.month]))
 	{
 			tmp_pair.second.error = "Error: bad input => " + str;
 			tmp_pair.second.flag = TRUE;
@@ -128,36 +131,38 @@ int	bitCoin::checkForHyphen(const std::string& str) const{
 }
 
 void	bitCoin::printResult() {
-	parse_csv();
-	
 	int pos = 0;
 	std::string line;
 	std::pair<std::string, t_date>	tmp_pair;
 	std::map<std::string, t_date>::iterator it;
 
+	parse_csv();
 	std::getline(_value_db, line);
 	if( line.compare("date | value"))
-		throw std::invalid_argument("Invalid header: please crate a valid value \
-			file in the root of this directory with this header format: date | value");
+		std::cout << "header missing: date | value" << std::endl;
 	while(std::getline(_value_db, line))
 	{
-		if(!(pos = line.find(" | ")) || line.empty())
-			throw std::invalid_argument("Invalid input file format");
+		if(!(pos = line.find(" | ")) || line.empty() || pos < 0)
+			std::cout << "Error: bad input => " + line << std::endl;
 		else{
 			tmp_pair = check_dates(line.substr(0 , pos));
 			tmp_pair = check_values(line.c_str() + (pos + 3), tmp_pair);
-
-		std::string tmp = tmp_pair.first;
-		it = _csv_map.find(tmp);
-		if (tmp_pair.second.flag)
-			std::cout <<  tmp_pair.second.error << std::endl;
-		else if(it != _csv_map.end()){
-			std::cout << it->first << " => " 
-			<< it->second.value * tmp_pair.second.value << std::endl;
-		}
-		else if (it == _csv_map.end()){
-			find_closest(tmp_pair);
-		}
+			if (tmp_pair.second.value > 1000)
+			{
+				tmp_pair.second.error = "Error: number is too large";
+				tmp_pair.second.flag = TRUE;
+			}
+			std::string tmp = tmp_pair.first;
+			it = _csv_map.find(tmp);
+			if (tmp_pair.second.flag)
+				std::cout <<  tmp_pair.second.error << std::endl;
+			else if(it != _csv_map.end()){
+				std::cout << it->first << " => " 
+				<< it->second.value * tmp_pair.second.value << std::endl;
+			}
+			else if (it == _csv_map.end()){
+				find_closest(tmp_pair);
+			}
 		}
 	}
 }
@@ -175,8 +180,20 @@ void bitCoin::find_closest(std::pair<std::string, t_date>&	tmp_pair) const{
 		{
 			std::cout << rit->first << " => " 
 			<< rit->second.value * tmp_pair.second.value << std::endl;
-			break;
+			return;
+		}
+	}
+	std::cout << "No records for this date. => " << tmp_pair.first << std::endl;
+}
+
+void bitCoin::check_map() const{
+
+	for(std::map<std::string, t_date>::const_iterator it = _csv_map.begin(); it != _csv_map.end(); ++it)
+	{
+		if(it->second.flag)
+		{
+			std::cout << it->second.error << std::endl;
+			throw std::invalid_argument("Invalid csv file format");
 		}
 	}
 }
-

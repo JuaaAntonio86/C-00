@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:31:39 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/18 18:11:45 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:22:55 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class bitCoin{
 		int										checkForHyphen(const std::string& str) const;
 		std::pair<std::string, t_date>&			check_values(const std::string& value, std::pair<std::string, t_date>&	tmp_pair);
 		void									find_closest(std::pair<std::string, t_date>&	tmp_pair) const;
+		void									check_map() const;
 	public:
 												~bitCoin();
 												bitCoin(const std::string& csv_file);
