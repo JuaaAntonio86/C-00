@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:31:49 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/19 19:57:32 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:39:11 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class RPN{
 							RPN(const RPN& other);
 		RPN& 				operator=(const RPN& other);
 		std::stack<int>		stack;
-		void				process_input();
-
+		void				process_input(char ope);
+		bool				is_operand(char ope) const;
+	
 	public:
 							RPN();
 							~RPN();
