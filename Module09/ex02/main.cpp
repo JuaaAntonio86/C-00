@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:02:34 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/29 19:42:42 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/29 23:40:06 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	if (argc > 2)
 	{
 		clock_t	t;
-		
+		std::cout << std::fixed; 
 		try{
 			int* arr = parse_argv(argc, argv);
 			std::cout << "Before: ";
@@ -36,15 +36,15 @@ int main(int argc, char **argv)
 				std::cout << *it << " ";
 			std::cout << std::endl;
 
-			std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector :"
+			std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector : "
 				<< static_cast<double>(t)/CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 
 			/*//////////////////////////////////// DEQUE /////////////////////////////////*/
 			t = clock();
 			std::deque<int> deq(arr, arr + (argc - 1));
-			// sort_deque(deq);
+			sort_deq(deq);
 			t = clock() - t;
-			std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque :"
+			std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque : "
 				<< static_cast<double>(t)/CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 			delete []arr;
 		}
