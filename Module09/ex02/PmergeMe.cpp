@@ -6,23 +6,44 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:02:37 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/29 00:42:22 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:11:53 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <new>
 #include <stdio.h>
 #include <stdlib.h>
+#include <exception>
+
+bool isInteger(const std::string& s) {
+	char* endPtr;
+	
+	std::strtol(s.c_str(), &endPtr, 10);
+	return *endPtr == '\0' || s.empty();
+}
+
 int* parse_argv(int argc, char **argv){
-	(void)argv;
-	(void)argc;
-	int *arr = (int*)malloc(sizeof(int) * 10);
-	if (!arr)
-		throw std::invalid_argument("Invalid input");
-	for (int i = 0; i < 10; ++i)
-		arr[i] = i;
-	for (int i = 0; i < 10; ++i)
-		std::cout << arr[i] << std::endl;
+	int*	arr;
+	bool	flag = 0;
+
+	try{
+		arr = new int[argc - 1];
+	}
+	catch(const std::bad_alloc& e){
+		std::cerr << "Allocation failed: " << e.what() << std::endl;
+        throw;
+	}
+	for(int i = 1; i < argc; ++i)
+	{
+		std::string arg = argv[i];
+		if((flag = isInteger(argv[i])))
+			arr[i - 1] = std::strtol(arg.c_str(), NULL, 10);
+		if (!flag || arr[i - 1] > INT_MAX || arr[i - 1] < 0) {
+			delete []arr;
+			throw std::invalid_argument("Invalid input");
+		}
+	}
 	return arr;
 }
 

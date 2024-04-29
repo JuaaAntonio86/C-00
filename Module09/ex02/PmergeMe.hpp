@@ -6,7 +6,7 @@
 /*   By: juan-anm < juan-anm@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:02:40 by juan-anm          #+#    #+#             */
-/*   Updated: 2024/04/29 00:18:57 by juan-anm         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:36:01 by juan-anm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <vector>
 #include <deque>
 
-int* parse_argv(int argc, char **argv);
-
-void sort_vect(std::vector<int>& vect);
-void merge_vect(std::vector<int>& leftvec, std::vector<int>& rightvect, std::vector<int>& vect);
+int*	parse_argv(int argc, char **argv);
+bool	isInteger(const std::string& s);
+void	sort_vect(std::vector<int>& vect);
+void	merge_vect(std::vector<int>& leftvec, std::vector<int>& rightvect, std::vector<int>& vect);
